@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration name="OCD iot_lab" type="com.jetbrains.cidr.embedded.openocd.conf.type" factoryName="com.jetbrains.cidr.embedded.openocd.conf.factory" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="iot_lab" TARGET_NAME="iot_lab.elf" version="1" RUN_TARGET_PROJECT_NAME="iot_lab" RUN_TARGET_NAME="iot_lab.elf">
+    <openocd version="1" gdb-port="3333" telnet-port="4444" board-config="$PROJECT_DIR$/stm32l4discovery.cfg" reset-type="INIT" download-type="UPDATED_ONLY">
+      <debugger kind="GDB" isBundled="true" />
+    </openocd>
+    <method v="2">
+      <option name="CLION.COMPOUND.BUILD" enabled="true" />
+    </method>
+  </configuration>
+</component>
