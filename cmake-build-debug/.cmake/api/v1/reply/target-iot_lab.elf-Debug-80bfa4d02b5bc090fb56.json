@@ -154,23 +154,23 @@
 			[
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/Core/Inc"
+					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Core/Inc"
 				},
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc"
+					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy"
+					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/Drivers/CMSIS/Device/ST/STM32L4xx/Include"
+					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/CMSIS/Device/ST/STM32L4xx/Include"
 				},
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/Drivers/CMSIS/Include"
+					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/CMSIS/Include"
 				}
 			],
 			"language" : "C",
@@ -281,23 +281,23 @@
 			[
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/Core/Inc"
+					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Core/Inc"
 				},
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc"
+					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy"
+					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/Drivers/CMSIS/Device/ST/STM32L4xx/Include"
+					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/CMSIS/Device/ST/STM32L4xx/Include"
 				},
 				{
 					"backtrace" : 10,
-					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/Drivers/CMSIS/Include"
+					"path" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/CMSIS/Include"
 				}
 			],
 			"language" : "ASM",
@@ -322,7 +322,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-Wl,-gc-sections,--print-memory-usage,-Map=C:/Users/lc201/Downloads/LANDrop/iot_lab/cmake-build-debug/iot_lab.map",
+				"fragment" : "-Wl,-gc-sections,--print-memory-usage,-Map=C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/cmake-build-debug/iot_lab.map",
 				"role" : "flags"
 			},
 			{
@@ -347,7 +347,7 @@
 			},
 			{
 				"backtrace" : 4,
-				"fragment" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/STM32L475VETX_FLASH.ld",
+				"fragment" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/STM32L475VETX_FLASH.ld",
 				"role" : "flags"
 			}
 		],

@@ -22,6 +22,7 @@
 #include "stm32l4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,15 +42,16 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-int32_t rx_count=0;
-
-extern uint8_t rx_buffer[256];
+int32_t rx1_count=0;
+int32_t rx2_count=0;
+extern uint8_t rx2_buffer[256];
+extern uint8_t rx1_buffer[256];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN PFP */
 void USART2_IdleCallback(uint8_t *pData,uint16_t len);
-
+void USART1_IdleCallback(uint8_t *pData,uint16_t len);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -208,9 +210,32 @@ void SysTick_Handler(void)
 void USART1_IRQHandler(void)
 {
   /* USER CODE BEGIN USART1_IRQn 0 */
+    uint8_t res = 0;
+    //接收中断
+    if(__HAL_UART_GET_FLAG(&huart1,UART_FLAG_RXNE) != RESET)
+    {
+        HAL_UART_Receive(&huart1,&res,1,1000);
+        //将数据放入缓冲区
+        if(rx1_count < 256)
+        {
+            rx1_buffer[rx1_count] = res;
+            rx1_count++;
+        }
 
+        __HAL_UART_CLEAR_FLAG(&huart1,UART_FLAG_RXNE);
+    }
+//空闲中断
+    if(__HAL_UART_GET_FLAG(&huart1,UART_FLAG_IDLE) != RESET)
+    {
+        //一帧数据接收完成
+        USART1_IdleCallback(rx1_buffer, rx1_count);
+        rx1_count = 0;
+
+        __HAL_UART_CLEAR_IDLEFLAG(&huart1);
+        memset(rx1_buffer,0,256);
+    }
   /* USER CODE END USART1_IRQn 0 */
-  HAL_UART_IRQHandler(&huart1);
+//  HAL_UART_IRQHandler(&huart1);
   /* USER CODE BEGIN USART1_IRQn 1 */
 
 
@@ -229,10 +254,10 @@ void USART2_IRQHandler(void)
     {
         HAL_UART_Receive(&huart2,&res,1,1000);
         //将数据放入缓冲区
-        if(rx_count < 256)
+        if(rx2_count < 256)
         {
-            rx_buffer[rx_count] = res;
-            rx_count++;
+            rx2_buffer[rx2_count] = res;
+            rx2_count++;
         }
 
         __HAL_UART_CLEAR_FLAG(&huart2,UART_FLAG_RXNE);
@@ -241,10 +266,11 @@ void USART2_IRQHandler(void)
     if(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_IDLE) != RESET)
     {
         //一帧数据接收完成
-        USART2_IdleCallback(rx_buffer,rx_count);
-        rx_count = 0;
+        USART2_IdleCallback(rx2_buffer, rx2_count);
+        rx2_count = 0;
 
         __HAL_UART_CLEAR_IDLEFLAG(&huart2);
+        memset(rx2_buffer,0,256);
     }
   /* USER CODE END USART2_IRQn 0 */
 //  HAL_UART_IRQHandler(&huart2);
@@ -259,5 +285,16 @@ void USART2_IdleCallback(uint8_t *pData,uint16_t len)
     while(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_TC) != SET);
 
     HAL_UART_Transmit(&huart1,pData,len,1000);
+}
+extern uint8_t trans_mode;
+void USART1_IdleCallback(uint8_t *pData,uint16_t len)
+{
+    while(__HAL_UART_GET_FLAG(&huart1,UART_FLAG_TC) != SET);
+    if((pData[0] == '1'||pData[0] == '2')&&trans_mode == 0)
+    {
+        trans_mode = pData[0];
+    }
+    else
+        HAL_UART_Transmit(&huart2,pData,len,1000);
 }
 /* USER CODE END 1 */

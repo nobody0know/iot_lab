@@ -57,9 +57,60 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint8_t rx_buffer[256];
-char at[20] = {"AT+MODEL?\r\n"};
+uint8_t rx2_buffer[256];
+uint8_t rx1_buffer[256];
+uint8_t trans_mode = 0;
+char at_test[20] = {"AT\r\n"};
+char at_restart[20] = {"AT+RESET\r\n"};
+char at_open_showback[20]={"ATE1\r\n"};
+char at_close_showback[20]={"ATE0\r\n"};
 
+char at_search_cwmode[20] = {"AT+CWMODE=?\r\n"};
+char at_set_cwmode_nomal[20] = {"AT+CWMODE=0\r\n"};
+char at_set_cwmode_lowpower[20] = {"AT+CWMODE=2\r\n"};
+char at_set_cwmode_weakup[20] = {"AT+CWMODE=1\r\n"};
+
+char at_search_tmode[20] = {"AT+TMODE=?\r\n"};
+char at_set_tmode_transparent[20] = {"AT+TMODE=0\r\n"};
+char at_set_tmode_orientation[20] = {"AT+TMODE=1\r\n"};
+
+char at_set_uart_baudrate_115200[20] = {"AT+UART=7,0\r\n"};
+
+char choose_mode[100] = {"please choose transport mode:\n 1.transparent mode\n 2.orientation mode\r\n"};
+void AT_lora_init()
+{
+    HAL_Delay(100);
+    HAL_UART_Transmit(&huart2,(uint8_t *)at_open_showback,strlen(at_open_showback),1000);
+    HAL_Delay(100);
+    HAL_UART_Transmit(&huart2,(uint8_t *)at_set_uart_baudrate_115200,strlen(at_set_uart_baudrate_115200),1000);
+    HAL_Delay(100);
+
+}
+void AT_lora_mode_set()
+{
+    HAL_UART_Transmit(&huart1,(uint8_t *)choose_mode,strlen(choose_mode),1000);
+    while(trans_mode==0)
+    {
+    }
+    if(trans_mode==1)//定向传输
+    {
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_tmode_transparent,strlen(at_set_tmode_transparent),1000);
+        HAL_Delay(100);
+        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_restart,strlen(at_restart),1000);
+        HAL_Delay(100);
+
+    }
+    else
+    {
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_tmode_orientation,strlen(at_set_tmode_orientation),1000);
+        HAL_Delay(100);
+        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_restart,strlen(at_restart),1000);
+        HAL_Delay(100);
+    }
+
+}
 /* USER CODE END 0 */
 
 /**
@@ -94,9 +145,13 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
-//    __HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);
     __HAL_UART_ENABLE_IT(&huart2,UART_IT_RXNE);
     __HAL_UART_ENABLE_IT(&huart2,UART_IT_IDLE);
+    __HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);
+    __HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);
+    AT_lora_init();
+    AT_lora_mode_set();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -106,7 +161,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-      HAL_UART_Transmit(&huart2,at,strlen(at),100);
+
+
       HAL_Delay(10);
   }
   /* USER CODE END 3 */

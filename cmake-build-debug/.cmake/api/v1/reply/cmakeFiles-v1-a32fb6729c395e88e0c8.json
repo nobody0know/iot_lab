@@ -1187,8 +1187,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/cmake-build-debug",
-		"source" : "C:/Users/lc201/Downloads/LANDrop/iot_lab"
+		"build" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/cmake-build-debug",
+		"source" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab"
 	},
 	"version" : 
 	{

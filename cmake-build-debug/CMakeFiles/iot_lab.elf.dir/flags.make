@@ -5,13 +5,13 @@
 # compile C with C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gcc.exe
 ASM_DEFINES = -DDEBUG -DSTM32L475xx -DUSE_HAL_DRIVER
 
-ASM_INCLUDES = -IC:\Users\lc201\Downloads\LANDrop\iot_lab\Core\Inc -IC:\Users\lc201\Downloads\LANDrop\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc -IC:\Users\lc201\Downloads\LANDrop\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc\Legacy -IC:\Users\lc201\Downloads\LANDrop\iot_lab\Drivers\CMSIS\Device\ST\STM32L4xx\Include -IC:\Users\lc201\Downloads\LANDrop\iot_lab\Drivers\CMSIS\Include
+ASM_INCLUDES = -IC:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab\Core\Inc -IC:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc -IC:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc\Legacy -IC:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab\Drivers\CMSIS\Device\ST\STM32L4xx\Include -IC:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab\Drivers\CMSIS\Include
 
 ASM_FLAGS = -g -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -x assembler-with-cpp -Og -g
 
 C_DEFINES = -DDEBUG -DSTM32L475xx -DUSE_HAL_DRIVER
 
-C_INCLUDES = -IC:\Users\lc201\Downloads\LANDrop\iot_lab\Core\Inc -IC:\Users\lc201\Downloads\LANDrop\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc -IC:\Users\lc201\Downloads\LANDrop\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc\Legacy -IC:\Users\lc201\Downloads\LANDrop\iot_lab\Drivers\CMSIS\Device\ST\STM32L4xx\Include -IC:\Users\lc201\Downloads\LANDrop\iot_lab\Drivers\CMSIS\Include
+C_INCLUDES = -IC:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab\Core\Inc -IC:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc -IC:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc\Legacy -IC:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab\Drivers\CMSIS\Device\ST\STM32L4xx\Include -IC:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab\Drivers\CMSIS\Include
 
 C_FLAGS = -g -fdiagnostics-color=always -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Og -g -std=gnu11
 

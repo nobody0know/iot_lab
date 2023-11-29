@@ -101,7 +101,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake"
   "C:/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/share/cmake-3.24/Modules/Platform/Generic.cmake"
   "C:/Program Files/JetBrains/CLion 2021.3.3/bin/cmake/win/share/cmake-3.24/Modules/ProcessorCount.cmake"
-  "C:/Users/lc201/Downloads/LANDrop/iot_lab/CMakeLists.txt"
+  "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/CMakeLists.txt"
   "CMakeFiles/3.24.2/CMakeASMCompiler.cmake"
   "CMakeFiles/3.24.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.24.2/CMakeCXXCompiler.cmake"

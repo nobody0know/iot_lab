@@ -163,7 +163,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/lc201/Downloads/LANDrop/iot_lab/cmake-build-debug"
+			"value" : "c:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -687,7 +687,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -747,7 +747,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/lc201/Downloads/LANDrop/iot_lab"
+			"value" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1383,7 +1383,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/cmake-build-debug"
+			"value" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/cmake-build-debug"
 		},
 		{
 			"name" : "iot_lab_IS_TOP_LEVEL",
@@ -1407,7 +1407,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/lc201/Downloads/LANDrop/iot_lab"
+			"value" : "C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab"
 		}
 	],
 	"kind" : "cache",
