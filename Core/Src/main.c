@@ -60,30 +60,61 @@ void SystemClock_Config(void);
 uint8_t rx2_buffer[256];
 uint8_t rx1_buffer[256];
 uint8_t trans_mode = 0;
+uint8_t config_flag = 0;
+uint8_t config_ab = 0;
 char at_test[20] = {"AT\r\n"};
 char at_restart[20] = {"AT+RESET\r\n"};
 char at_open_showback[20]={"ATE1\r\n"};
 char at_close_showback[20]={"ATE0\r\n"};
 
-char at_search_cwmode[20] = {"AT+CWMODE=?\r\n"};
+char at_search_cwmode[20] = {"AT+CWMODE?\r\n"};//查询工作模式
 char at_set_cwmode_nomal[20] = {"AT+CWMODE=0\r\n"};
 char at_set_cwmode_lowpower[20] = {"AT+CWMODE=2\r\n"};
 char at_set_cwmode_weakup[20] = {"AT+CWMODE=1\r\n"};
 
-char at_search_tmode[20] = {"AT+TMODE=?\r\n"};
-char at_set_tmode_transparent[20] = {"AT+TMODE=0\r\n"};
-char at_set_tmode_orientation[20] = {"AT+TMODE=1\r\n"};
+char at_search_tmode[20] = {"AT+TMODE?\r\n"};//查询发送状态
+char at_set_tmode_transparent[20] = {"AT+TMODE=0\r\n"};//透明传输
+char at_set_tmode_orientation[20] = {"AT+TMODE=1\r\n"};//定点传输
+
+char at_search_wlrate[20] = {"AT+WLRATE?\r\n"};//查询无线速率和信道
+char at_set_wlrate_a[30] = {"AT+WLRATE=11,4\r\n"};//信道11 速率9.6kbps
+char at_set_wlrate_b[30] = {"AT+WLRATE=12,4\r\n"};//信道11 速率9.6kbps
+
+char at_search_address[20] = {"AT+ADDR?\r\n"};//查询设备地址
+char at_set_address_a[20] = {"AT+ADDR=11,45\r\n"};
+char at_set_address_b[20] = {"AT+ADDR=11,46\r\n"};
 
 char at_set_uart_baudrate_115200[20] = {"AT+UART=7,0\r\n"};
 
-char choose_mode[100] = {"please choose transport mode:\n 1.transparent mode\n 2.orientation mode\r\n"};
+char choose_mode[100] = {"\nplease choose transport mode:\n 1.transparent mode\n 2.orientation mode\r\n"};
+char choose_work[100] = {"\nPlease select whether you want to configure it:\n 1.need\n 2.no\r\n"};
+char choose_board[100] = {"\nPlease select which board you are on:\n 1.A board\n 2.B board\r\n"};
+
+char error[30] = {"something was wrong!\r\n"};
+void AT_lora_mode_set();
+void AT_lora_inquire();
 void AT_lora_init()
 {
     HAL_Delay(100);
-    HAL_UART_Transmit(&huart2,(uint8_t *)at_open_showback,strlen(at_open_showback),1000);
+    HAL_UART_Transmit(&huart2,(uint8_t *)at_test,strlen(at_test),1000);
     HAL_Delay(100);
-    HAL_UART_Transmit(&huart2,(uint8_t *)at_set_uart_baudrate_115200,strlen(at_set_uart_baudrate_115200),1000);
+    AT_lora_inquire();
     HAL_Delay(100);
+    HAL_UART_Transmit(&huart1,(uint8_t *)choose_work,strlen(choose_work),1000);
+    while (config_flag==0)
+    {
+    }
+    if(config_flag==1)
+    {
+        AT_lora_mode_set();
+    }
+    else
+    {
+        AT_lora_inquire();
+        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_restart,strlen(at_restart),1000);
+        HAL_Delay(100);
+    }
 
 }
 void AT_lora_mode_set()
@@ -94,22 +125,79 @@ void AT_lora_mode_set()
     }
     if(trans_mode==1)//定向传输
     {
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_open_showback,strlen(at_open_showback),1000);
+        HAL_Delay(100);
         HAL_UART_Transmit(&huart2,(uint8_t *)at_set_tmode_transparent,strlen(at_set_tmode_transparent),1000);
         HAL_Delay(100);
+
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_wlrate_a,strlen(at_set_wlrate_a),1000);
+        HAL_Delay(100);
+
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_address_a,strlen(at_set_address_a),1000);
+        HAL_Delay(100);
+
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_uart_baudrate_115200,strlen(at_set_uart_baudrate_115200),1000);
+        HAL_Delay(100);
+        AT_lora_inquire();
         HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
         HAL_UART_Transmit(&huart2,(uint8_t *)at_restart,strlen(at_restart),1000);
         HAL_Delay(100);
 
+    }
+    else if(trans_mode == 2)
+    {
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_open_showback,strlen(at_open_showback),1000);
+        HAL_Delay(100);
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_tmode_orientation,strlen(at_set_tmode_orientation),1000);
+        HAL_Delay(100);
+        HAL_UART_Transmit(&huart1,(uint8_t *)choose_board,strlen(choose_board),1000);
+        while (config_ab==0)
+        {
+
+        }
+        if(config_ab==1)
+        {
+            HAL_UART_Transmit(&huart2,(uint8_t *)at_set_wlrate_a,strlen(at_set_wlrate_a),1000);
+            HAL_Delay(100);
+
+            HAL_UART_Transmit(&huart2,(uint8_t *)at_set_address_a,strlen(at_set_address_a),1000);
+            HAL_Delay(100);
+        }
+        else if(config_ab == 2)
+        {
+            HAL_UART_Transmit(&huart2,(uint8_t *)at_set_wlrate_b,strlen(at_set_wlrate_b),1000);
+            HAL_Delay(100);
+
+            HAL_UART_Transmit(&huart2,(uint8_t *)at_set_address_b,strlen(at_set_address_b),1000);
+            HAL_Delay(100);
+        }
+
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_uart_baudrate_115200,strlen(at_set_uart_baudrate_115200),1000);
+        HAL_Delay(100);
+        AT_lora_inquire();
+        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_restart,strlen(at_restart),1000);
+        HAL_Delay(100);
     }
     else
     {
-        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_tmode_orientation,strlen(at_set_tmode_orientation),1000);
-        HAL_Delay(100);
-        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
-        HAL_UART_Transmit(&huart2,(uint8_t *)at_restart,strlen(at_restart),1000);
-        HAL_Delay(100);
+        HAL_UART_Transmit(&huart1,(uint8_t *)error,strlen(error),1000);
+
     }
 
+}
+void AT_lora_inquire()
+{
+//    HAL_UART_Transmit(&huart2,(uint8_t *)at_close_showback,strlen(at_close_showback),1000);
+//    HAL_Delay(100);
+    HAL_UART_Transmit(&huart2,(uint8_t *)at_search_address,strlen(at_search_address),1000);
+    HAL_Delay(100);
+    HAL_UART_Transmit(&huart2,(uint8_t *)at_search_wlrate,strlen(at_search_wlrate),1000);
+    HAL_Delay(100);
+    HAL_UART_Transmit(&huart2,(uint8_t *)at_search_cwmode,strlen(at_search_cwmode),1000);
+    HAL_Delay(100);
+    HAL_UART_Transmit(&huart2,(uint8_t *)at_search_tmode,strlen(at_search_tmode),1000);
+    HAL_Delay(100);
 }
 /* USER CODE END 0 */
 
@@ -150,7 +238,6 @@ int main(void)
     __HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);
     __HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);
     AT_lora_init();
-    AT_lora_mode_set();
 
   /* USER CODE END 2 */
 

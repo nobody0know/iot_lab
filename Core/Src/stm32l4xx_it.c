@@ -249,6 +249,17 @@ void USART2_IRQHandler(void)
 {
   /* USER CODE BEGIN USART2_IRQn 0 */
   uint8_t res = 0;
+  if(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_ORE) != RESET)
+  {
+      HAL_UART_Receive(&huart2,&res,1,1000);
+      if(rx2_count < 256)
+      {
+          rx2_buffer[rx2_count] = res;
+          rx2_count++;
+      }
+      __HAL_UART_CLEAR_FLAG(&huart2,UART_FLAG_ORE);
+  }
+
     //接收中断
     if(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_RXNE) != RESET)
     {
@@ -287,12 +298,22 @@ void USART2_IdleCallback(uint8_t *pData,uint16_t len)
     HAL_UART_Transmit(&huart1,pData,len,1000);
 }
 extern uint8_t trans_mode;
+extern uint8_t config_flag;
+extern uint8_t config_ab;
 void USART1_IdleCallback(uint8_t *pData,uint16_t len)
 {
     while(__HAL_UART_GET_FLAG(&huart1,UART_FLAG_TC) != SET);
-    if((pData[0] == '1'||pData[0] == '2')&&trans_mode == 0)
+    if((pData[0] == '1'||pData[0] == '2')&&config_flag== 0)
     {
-        trans_mode = pData[0];
+        config_flag = pData[0]-'0';
+    }
+    else if((pData[0] == '1'||pData[0] == '2')&&trans_mode == 0)
+    {
+        trans_mode = pData[0]-'0';
+    }
+    else if((pData[0] == '1'||pData[0] == '2')&&config_ab == 0)
+    {
+        config_ab = pData[0]-'0';
     }
     else
         HAL_UART_Transmit(&huart2,pData,len,1000);
