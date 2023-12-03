@@ -235,7 +235,6 @@ void USART1_IRQHandler(void)
         memset(rx1_buffer,0,256);
     }
   /* USER CODE END USART1_IRQn 0 */
-//  HAL_UART_IRQHandler(&huart1);
   /* USER CODE BEGIN USART1_IRQn 1 */
 
 
@@ -276,7 +275,7 @@ void USART2_IRQHandler(void)
 //空闲中断
     if(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_IDLE) != RESET)
     {
-        //一帧数据接收完成
+        //�?帧数据接收完�?
         USART2_IdleCallback(rx2_buffer, rx2_count);
         rx2_count = 0;
 
@@ -284,7 +283,6 @@ void USART2_IRQHandler(void)
         memset(rx2_buffer,0,256);
     }
   /* USER CODE END USART2_IRQn 0 */
-//  HAL_UART_IRQHandler(&huart2);
   /* USER CODE BEGIN USART2_IRQn 1 */
 
   /* USER CODE END USART2_IRQn 1 */

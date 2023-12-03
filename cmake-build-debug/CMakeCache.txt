@@ -15,7 +15,7 @@
 ########################
 
 //Path to a program.
-CMAKE_ADDR2LINE:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/addr2line.exe
+CMAKE_ADDR2LINE:FILEPATH=C:/arm_toolchain/bin/arm-none-eabi-addr2line.exe
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
@@ -29,16 +29,16 @@ CMAKE_ASM_COMPILER_RANLIB:FILEPATH=C:/arm_toolchain/bin/arm-none-eabi-gcc-ranlib
 CMAKE_ASM_FLAGS:STRING=
 
 //Flags used by the ASM compiler during DEBUG builds.
-CMAKE_ASM_FLAGS_DEBUG:STRING=
+CMAKE_ASM_FLAGS_DEBUG:STRING=-g
 
 //Flags used by the ASM compiler during MINSIZEREL builds.
-CMAKE_ASM_FLAGS_MINSIZEREL:STRING=
+CMAKE_ASM_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 
 //Flags used by the ASM compiler during RELEASE builds.
-CMAKE_ASM_FLAGS_RELEASE:STRING=
+CMAKE_ASM_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the ASM compiler during RELWITHDEBINFO builds.
-CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=
+CMAKE_ASM_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
@@ -73,16 +73,16 @@ CMAKE_CXX_COMPILER_RANLIB:FILEPATH=C:/arm_toolchain/bin/arm-none-eabi-gcc-ranlib
 CMAKE_CXX_FLAGS:STRING=
 
 //Flags used by the CXX compiler during DEBUG builds.
-CMAKE_CXX_FLAGS_DEBUG:STRING=
+CMAKE_CXX_FLAGS_DEBUG:STRING=-g
 
 //Flags used by the CXX compiler during MINSIZEREL builds.
-CMAKE_CXX_FLAGS_MINSIZEREL:STRING=
+CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 
 //Flags used by the CXX compiler during RELEASE builds.
-CMAKE_CXX_FLAGS_RELEASE:STRING=
+CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
-CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=
+CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //C compiler
 CMAKE_C_COMPILER:STRING=C:/arm_toolchain/bin/arm-none-eabi-gcc.exe
@@ -99,16 +99,16 @@ CMAKE_C_COMPILER_RANLIB:FILEPATH=C:/arm_toolchain/bin/arm-none-eabi-gcc-ranlib.e
 CMAKE_C_FLAGS:STRING=
 
 //Flags used by the C compiler during DEBUG builds.
-CMAKE_C_FLAGS_DEBUG:STRING=
+CMAKE_C_FLAGS_DEBUG:STRING=-g
 
 //Flags used by the C compiler during MINSIZEREL builds.
-CMAKE_C_FLAGS_MINSIZEREL:STRING=
+CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 
 //Flags used by the C compiler during RELEASE builds.
-CMAKE_C_FLAGS_RELEASE:STRING=
+CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the C compiler during RELWITHDEBINFO builds.
-CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/dlltool.exe
@@ -135,7 +135,7 @@ CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/Users/lxj/CLionProjects/iot_lab/cmake
 CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/iot_lab
 
 //Path to a program.
-CMAKE_LINKER:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/ld.exe
+CMAKE_LINKER:FILEPATH=C:/arm_toolchain/bin/arm-none-eabi-ld.exe
 
 //make program
 CMAKE_MAKE_PROGRAM:FILEPATH=C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe
@@ -161,7 +161,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_NM:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/nm.exe
+CMAKE_NM:FILEPATH=C:/arm_toolchain/bin/arm-none-eabi-nm.exe
 
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
@@ -173,10 +173,10 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_NAME:STATIC=iot_lab
 
 //Path to a program.
-CMAKE_RANLIB:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/ranlib.exe
+CMAKE_RANLIB:FILEPATH=C:/arm_toolchain/bin/arm-none-eabi-ranlib.exe
 
 //Path to a program.
-CMAKE_READELF:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/readelf.exe
+CMAKE_READELF:FILEPATH=C:/arm_toolchain/bin/arm-none-eabi-readelf.exe
 
 //Flags used by the linker during the creation of shared libraries
 // during all build types.
@@ -226,7 +226,7 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_STRIP:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/strip.exe
+CMAKE_STRIP:FILEPATH=C:/arm_toolchain/bin/arm-none-eabi-strip.exe
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -344,7 +344,7 @@ CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_DLLTOOL
 CMAKE_DLLTOOL-ADVANCED:INTERNAL=1
 //Executable file format
-CMAKE_EXECUTABLE_FORMAT:INTERNAL=Unknown
+CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
 CMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG

@@ -7,11 +7,11 @@ ASM_DEFINES = -DDEBUG -DSTM32L475xx -DUSE_HAL_DRIVER
 
 ASM_INCLUDES = -IC:\Users\lxj\CLionProjects\iot_lab\Core\Inc -IC:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc -IC:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc\Legacy -IC:\Users\lxj\CLionProjects\iot_lab\Drivers\CMSIS\Device\ST\STM32L4xx\Include -IC:\Users\lxj\CLionProjects\iot_lab\Drivers\CMSIS\Include
 
-ASM_FLAGS = -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -x assembler-with-cpp -Og -g
+ASM_FLAGS = -g -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -x assembler-with-cpp -Og -g
 
 C_DEFINES = -DDEBUG -DSTM32L475xx -DUSE_HAL_DRIVER
 
 C_INCLUDES = -IC:\Users\lxj\CLionProjects\iot_lab\Core\Inc -IC:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc -IC:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Inc\Legacy -IC:\Users\lxj\CLionProjects\iot_lab\Drivers\CMSIS\Device\ST\STM32L4xx\Include -IC:\Users\lxj\CLionProjects\iot_lab\Drivers\CMSIS\Include
 
-C_FLAGS = -std=gnu11 -fdiagnostics-color=always -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Og -g
+C_FLAGS = -g -std=gnu11 -fdiagnostics-color=always -mcpu=cortex-m4 -mthumb -mthumb-interwork -ffunction-sections -fdata-sections -fno-common -fmessage-length=0 -Og -g
 

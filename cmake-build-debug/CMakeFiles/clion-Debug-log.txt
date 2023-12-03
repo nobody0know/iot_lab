@@ -14,6 +14,6 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Minimal optimization, debug info included
--- Configuring done (2.5s)
+-- Configuring done (2.9s)
 -- Generating done (0.1s)
 -- Build files have been written to: C:/Users/lxj/CLionProjects/iot_lab/cmake-build-debug

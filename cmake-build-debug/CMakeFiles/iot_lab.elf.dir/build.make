@@ -319,10 +319,38 @@ CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c.s"
 	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_gpio.c -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_gpio.c.s
 
+CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj: CMakeFiles/iot_lab.elf.dir/flags.make
+CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj: C:/Users/lxj/CLionProjects/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c
+CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj: CMakeFiles/iot_lab.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj"
+	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj -MF CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.c.obj.d -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.c.obj -c C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.c
+
+CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.i"
+	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.c > CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.c.i
+
+CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.s"
+	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.c -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.c.s
+
+CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj: CMakeFiles/iot_lab.elf.dir/flags.make
+CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj: C:/Users/lxj/CLionProjects/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c
+CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj: CMakeFiles/iot_lab.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj"
+	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj -MF CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c.obj.d -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c.obj -c C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c
+
+CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.i"
+	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c > CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c.i
+
+CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.s"
+	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c.s
+
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj: CMakeFiles/iot_lab.elf.dir/flags.make
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj: C:/Users/lxj/CLionProjects/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj: CMakeFiles/iot_lab.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj"
 	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj -MF CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr.c.obj.d -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr.c.obj -c C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr.c
 
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.i: cmake_force
@@ -336,7 +364,7 @@ CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj: CMakeFiles/iot_lab.elf.dir/flags.make
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj: C:/Users/lxj/CLionProjects/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj: CMakeFiles/iot_lab.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj"
 	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj -MF CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr_ex.c.obj.d -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr_ex.c.obj -c C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr_ex.c
 
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.i: cmake_force
@@ -350,7 +378,7 @@ CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj: CMakeFiles/iot_lab.elf.dir/flags.make
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj: C:/Users/lxj/CLionProjects/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj: CMakeFiles/iot_lab.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj"
 	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj -MF CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc.c.obj.d -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc.c.obj -c C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc.c
 
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.i: cmake_force
@@ -364,7 +392,7 @@ CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c.obj: CMakeFiles/iot_lab.elf.dir/flags.make
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c.obj: C:/Users/lxj/CLionProjects/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c.obj: CMakeFiles/iot_lab.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c.obj"
 	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c.obj -MF CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc_ex.c.obj.d -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc_ex.c.obj -c C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc_ex.c
 
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c.i: cmake_force
@@ -378,7 +406,7 @@ CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.obj: CMakeFiles/iot_lab.elf.dir/flags.make
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.obj: C:/Users/lxj/CLionProjects/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.obj: CMakeFiles/iot_lab.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.obj"
 	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.obj -MF CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim.c.obj.d -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim.c.obj -c C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim.c
 
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.i: cmake_force
@@ -392,7 +420,7 @@ CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c.obj: CMakeFiles/iot_lab.elf.dir/flags.make
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c.obj: C:/Users/lxj/CLionProjects/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c.obj: CMakeFiles/iot_lab.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c.obj"
 	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c.obj -MF CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim_ex.c.obj.d -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim_ex.c.obj -c C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim_ex.c
 
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c.i: cmake_force
@@ -406,7 +434,7 @@ CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c.obj: CMakeFiles/iot_lab.elf.dir/flags.make
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c.obj: C:/Users/lxj/CLionProjects/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c.obj: CMakeFiles/iot_lab.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c.obj"
 	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c.obj -MF CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart.c.obj.d -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart.c.obj -c C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart.c
 
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c.i: cmake_force
@@ -420,7 +448,7 @@ CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart.c
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c.obj: CMakeFiles/iot_lab.elf.dir/flags.make
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c.obj: C:/Users/lxj/CLionProjects/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c.obj: CMakeFiles/iot_lab.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c.obj"
 	C:\arm_toolchain\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c.obj -MF CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart_ex.c.obj.d -o CMakeFiles\iot_lab.elf.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart_ex.c.obj -c C:\Users\lxj\CLionProjects\iot_lab\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart_ex.c
 
 CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c.i: cmake_force
@@ -451,6 +479,8 @@ iot_lab_elf_OBJECTS = \
 "CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c.obj" \
 "CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c.obj" \
 "CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c.obj" \
+"CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj" \
+"CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj" \
 "CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj" \
 "CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj" \
 "CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj" \
@@ -481,6 +511,8 @@ iot_lab.elf: CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4
 iot_lab.elf: CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c.obj
 iot_lab.elf: CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c.obj
 iot_lab.elf: CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c.obj
+iot_lab.elf: CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj
+iot_lab.elf: CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj
 iot_lab.elf: CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj
 iot_lab.elf: CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj
 iot_lab.elf: CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj
@@ -491,7 +523,7 @@ iot_lab.elf: CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4
 iot_lab.elf: CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c.obj
 iot_lab.elf: CMakeFiles/iot_lab.elf.dir/build.make
 iot_lab.elf: CMakeFiles/iot_lab.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking C executable iot_lab.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking C executable iot_lab.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\iot_lab.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building C:/Users/lxj/CLionProjects/iot_lab/cmake-build-debug/iot_lab.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Building C:/Users/lxj/CLionProjects/iot_lab/cmake-build-debug/iot_lab.bin"

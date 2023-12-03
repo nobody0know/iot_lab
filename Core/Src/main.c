@@ -17,13 +17,13 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <string.h>
 #include "main.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <string.h>
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 /* USER CODE END Includes */
@@ -67,20 +67,20 @@ char at_restart[20] = {"AT+RESET\r\n"};
 char at_open_showback[20]={"ATE1\r\n"};
 char at_close_showback[20]={"ATE0\r\n"};
 
-char at_search_cwmode[20] = {"AT+CWMODE?\r\n"};//查询工作模式
+char at_search_cwmode[20] = {"AT+CWMODE?\r\n"};//閺屻儴顕楀銉ょ稊濡?崇础
 char at_set_cwmode_nomal[20] = {"AT+CWMODE=0\r\n"};
 char at_set_cwmode_lowpower[20] = {"AT+CWMODE=2\r\n"};
 char at_set_cwmode_weakup[20] = {"AT+CWMODE=1\r\n"};
 
-char at_search_tmode[20] = {"AT+TMODE?\r\n"};//查询发送状态
-char at_set_tmode_transparent[20] = {"AT+TMODE=0\r\n"};//透明传输
-char at_set_tmode_orientation[20] = {"AT+TMODE=1\r\n"};//定点传输
+char at_search_tmode[20] = {"AT+TMODE?\r\n"};//閺屻儴顕楅崣鎴??浣哄Ц閹??
+char at_set_tmode_transparent[20] = {"AT+TMODE=0\r\n"};//闁繑妲戞导鐘虹翻
+char at_set_tmode_orientation[20] = {"AT+TMODE=1\r\n"};//鐎规氨鍋ｆ导鐘虹翻
 
-char at_search_wlrate[20] = {"AT+WLRATE?\r\n"};//查询无线速率和信道
-char at_set_wlrate_a[30] = {"AT+WLRATE=11,4\r\n"};//信道11 速率9.6kbps
-char at_set_wlrate_b[30] = {"AT+WLRATE=12,4\r\n"};//信道11 速率9.6kbps
+char at_search_wlrate[20] = {"AT+WLRATE?\r\n"};//閺屻儴顕楅弮鐘靛殠闁喓宸奸崪灞间繆闁??
+char at_set_wlrate_a[30] = {"AT+WLRATE=11,4\r\n"};//娣囷繝浜?11 闁喓宸?9.6kbps
+char at_set_wlrate_b[30] = {"AT+WLRATE=12,4\r\n"};//娣囷繝浜?11 闁喓宸?9.6kbps
 
-char at_search_address[20] = {"AT+ADDR?\r\n"};//查询设备地址
+char at_search_address[20] = {"AT+ADDR?\r\n"};//閺屻儴顕楃拋鎯ь槵閸︽澘娼?
 char at_set_address_a[20] = {"AT+ADDR=11,45\r\n"};
 char at_set_address_b[20] = {"AT+ADDR=11,46\r\n"};
 
@@ -123,7 +123,7 @@ void AT_lora_mode_set()
     while(trans_mode==0)
     {
     }
-    if(trans_mode==1)//定向传输
+    if(trans_mode==1)//瀹氬悜浼犺緭
     {
         HAL_UART_Transmit(&huart2,(uint8_t *)at_open_showback,strlen(at_open_showback),1000);
         HAL_Delay(100);
