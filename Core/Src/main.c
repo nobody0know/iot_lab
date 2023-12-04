@@ -77,12 +77,12 @@ char at_set_tmode_transparent[20] = {"AT+TMODE=0\r\n"};//透明传输
 char at_set_tmode_orientation[20] = {"AT+TMODE=1\r\n"};//定点传输
 
 char at_search_wlrate[20] = {"AT+WLRATE?\r\n"};//查询无线速率和信道
-char at_set_wlrate_a[30] = {"AT+WLRATE=11,4\r\n"};//信道11 速率9.6kbps
-char at_set_wlrate_b[30] = {"AT+WLRATE=12,4\r\n"};//信道11 速率9.6kbps
+char at_set_wlrate_a[30] = {"AT+WLRATE=12,4\r\n"};//信道12 速率9.6kbps
+char at_set_wlrate_b[30] = {"AT+WLRATE=12,4\r\n"};//信道12 速率9.6kbps
 
 char at_search_address[20] = {"AT+ADDR?\r\n"};//查询设备地址
-char at_set_address_a[20] = {"AT+ADDR=11,45\r\n"};
-char at_set_address_b[20] = {"AT+ADDR=11,46\r\n"};
+char at_set_address_a[20] = {"AT+ADDR=13,45\r\n"};
+char at_set_address_b[20] = {"AT+ADDR=13,46\r\n"};
 
 char at_set_uart_baudrate_115200[20] = {"AT+UART=7,0\r\n"};
 
@@ -93,6 +93,7 @@ char choose_board[100] = {"\nPlease select which board you are on:\n 1.A board\n
 char error[30] = {"something was wrong!\r\n"};
 void AT_lora_mode_set();
 void AT_lora_inquire();
+void enter_low_power_mode();
 void AT_lora_init()
 {
     HAL_Delay(100);
@@ -123,7 +124,7 @@ void AT_lora_mode_set()
     while(trans_mode==0)
     {
     }
-    if(trans_mode==1)//定向传输
+    if(trans_mode==1)//透明传输
     {
         HAL_UART_Transmit(&huart2,(uint8_t *)at_open_showback,strlen(at_open_showback),1000);
         HAL_Delay(100);
@@ -142,13 +143,12 @@ void AT_lora_mode_set()
         HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
         HAL_UART_Transmit(&huart2,(uint8_t *)at_restart,strlen(at_restart),1000);
         HAL_Delay(100);
+        enter_low_power_mode();
 
     }
     else if(trans_mode == 2)
     {
         HAL_UART_Transmit(&huart2,(uint8_t *)at_open_showback,strlen(at_open_showback),1000);
-        HAL_Delay(100);
-        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_tmode_orientation,strlen(at_set_tmode_orientation),1000);
         HAL_Delay(100);
         HAL_UART_Transmit(&huart1,(uint8_t *)choose_board,strlen(choose_board),1000);
         while (config_ab==0)
@@ -157,6 +157,8 @@ void AT_lora_mode_set()
         }
         if(config_ab==1)
         {
+            HAL_UART_Transmit(&huart2,(uint8_t *)at_set_tmode_orientation,strlen(at_set_tmode_orientation),1000);
+            HAL_Delay(100);
             HAL_UART_Transmit(&huart2,(uint8_t *)at_set_wlrate_a,strlen(at_set_wlrate_a),1000);
             HAL_Delay(100);
 
@@ -165,6 +167,8 @@ void AT_lora_mode_set()
         }
         else if(config_ab == 2)
         {
+            HAL_UART_Transmit(&huart2,(uint8_t *)at_set_tmode_orientation,strlen(at_set_tmode_orientation),1000);
+            HAL_Delay(100);
             HAL_UART_Transmit(&huart2,(uint8_t *)at_set_wlrate_b,strlen(at_set_wlrate_b),1000);
             HAL_Delay(100);
 
@@ -188,8 +192,8 @@ void AT_lora_mode_set()
 }
 void AT_lora_inquire()
 {
-//    HAL_UART_Transmit(&huart2,(uint8_t *)at_close_showback,strlen(at_close_showback),1000);
-//    HAL_Delay(100);
+    HAL_UART_Transmit(&huart2,(uint8_t *)at_close_showback,strlen(at_close_showback),1000);
+    HAL_Delay(100);
     HAL_UART_Transmit(&huart2,(uint8_t *)at_search_address,strlen(at_search_address),1000);
     HAL_Delay(100);
     HAL_UART_Transmit(&huart2,(uint8_t *)at_search_wlrate,strlen(at_search_wlrate),1000);
@@ -198,6 +202,47 @@ void AT_lora_inquire()
     HAL_Delay(100);
     HAL_UART_Transmit(&huart2,(uint8_t *)at_search_tmode,strlen(at_search_tmode),1000);
     HAL_Delay(100);
+}
+
+void enter_low_power_mode()
+{
+    HAL_UART_DeInit(&huart2);
+    HAL_UART_DeInit(&huart1);
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+    GPIO_InitStruct.Pin = GPIO_PIN_3; //PA3 UART2 RX
+    GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+    GPIO_InitStruct.Pull = GPIO_PULLUP;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    /* EXTI interrupt init*/
+    HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+
+    HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON,PWR_STOPENTRY_WFI);
+//    HAL_NVIC_DisableIRQ(USART1_IRQn);   //关掉外部中断
+//    HAL_NVIC_DisableIRQ(USART2_IRQn);   //关掉外部中断
+//    SystemClock_Config();//重新配置时钟，低功耗唤醒之后默认HSI 8M
+
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if(GPIO_Pin == GPIO_PIN_3)
+    {
+        HAL_Init();
+        SystemClock_Config();
+        huart2.gState = HAL_UART_STATE_RESET;
+        huart1.gState = HAL_UART_STATE_RESET;
+        MX_USART2_UART_Init();
+        MX_USART1_UART_Init();
+        HAL_NVIC_DisableIRQ(EXTI3_IRQn);
+        __HAL_UART_ENABLE_IT(&huart2,UART_IT_RXNE);
+        __HAL_UART_ENABLE_IT(&huart2,UART_IT_IDLE);
+        __HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);
+        __HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);
+
+    }
 }
 /* USER CODE END 0 */
 

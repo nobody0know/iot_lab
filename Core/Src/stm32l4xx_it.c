@@ -318,4 +318,9 @@ void USART1_IdleCallback(uint8_t *pData,uint16_t len)
     else
         HAL_UART_Transmit(&huart2,pData,len,1000);
 }
+
+void EXTI3_IRQHandler(void)
+{
+    HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
+}
 /* USER CODE END 1 */
