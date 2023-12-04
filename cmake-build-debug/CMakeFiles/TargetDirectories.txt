@@ -1,3 +1,0 @@
-C:/Users/lxj/CLionProjects/iot_lab/cmake-build-debug/CMakeFiles/iot_lab.elf.dir
-C:/Users/lxj/CLionProjects/iot_lab/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/lxj/CLionProjects/iot_lab/cmake-build-debug/CMakeFiles/rebuild_cache.dir
