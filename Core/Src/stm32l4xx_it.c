@@ -275,7 +275,7 @@ void USART2_IRQHandler(void)
 //空闲中断
     if(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_IDLE) != RESET)
     {
-        //�?帧数据接收完�?
+        //一帧数据接收完成
         USART2_IdleCallback(rx2_buffer, rx2_count);
         rx2_count = 0;
 
@@ -289,11 +289,14 @@ void USART2_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
+extern void enter_low_power_mode();
+extern uint8_t weak_up;
 void USART2_IdleCallback(uint8_t *pData,uint16_t len)
 {
     while(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_TC) != SET);
 
     HAL_UART_Transmit(&huart1,pData,len,1000);
+    weak_up = 1;
 }
 extern uint8_t trans_mode;
 extern uint8_t config_flag;
@@ -317,8 +320,8 @@ void USART1_IdleCallback(uint8_t *pData,uint16_t len)
         HAL_UART_Transmit(&huart2,pData,len,1000);
 }
 
-void EXTI3_IRQHandler(void)
+void EXTI1_IRQHandler(void)
 {
-    HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
+    HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);
 }
 /* USER CODE END 1 */

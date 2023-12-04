@@ -62,6 +62,7 @@ uint8_t rx1_buffer[256];
 uint8_t trans_mode = 0;
 uint8_t config_flag = 0;
 uint8_t config_ab = 0;
+uint8_t weak_up=0;
 char at_test[20] = {"AT\r\n"};
 char at_restart[20] = {"AT+RESET\r\n"};
 char at_open_showback[20]={"ATE1\r\n"};
@@ -87,10 +88,11 @@ char at_set_address_b[20] = {"AT+ADDR=13,46\r\n"};
 char at_set_uart_baudrate_115200[20] = {"AT+UART=7,0\r\n"};
 
 char choose_mode[100] = {"\nplease choose transport mode:\n 1.transparent mode\n 2.orientation mode\r\n"};
-char choose_work[100] = {"\nPlease select whether you want to configure it:\n 1.need\n 2.no\r\n"};
+char choose_work[150] = {"\nPlease select whether you want to enter low power mode(only transparent mode support low power):\n 1.no\n 2.need\r\n"};
 char choose_board[100] = {"\nPlease select which board you are on:\n 1.A board\n 2.B board\r\n"};
 
 char error[30] = {"something was wrong!\r\n"};
+char low_power[30] = {"mcu enter low power mode"};
 void AT_lora_mode_set();
 void AT_lora_inquire();
 void enter_low_power_mode();
@@ -107,14 +109,15 @@ void AT_lora_init()
     }
     if(config_flag==1)
     {
+//        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_cwmode_weakup,strlen(at_set_cwmode_weakup),1000);//另一个板子需要低功耗唤醒时，主板再解除注释
         AT_lora_mode_set();
     }
-    else
+    else if(config_flag == 2)
     {
-        AT_lora_inquire();
-        HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
-        HAL_UART_Transmit(&huart2,(uint8_t *)at_restart,strlen(at_restart),1000);
         HAL_Delay(100);
+        AT_lora_mode_set();
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_cwmode_lowpower,strlen(at_set_cwmode_lowpower),1000);
+        enter_low_power_mode();
     }
 
 }
@@ -143,10 +146,10 @@ void AT_lora_mode_set()
         HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
         HAL_UART_Transmit(&huart2,(uint8_t *)at_restart,strlen(at_restart),1000);
         HAL_Delay(100);
-        enter_low_power_mode();
+
 
     }
-    else if(trans_mode == 2)
+    else if(trans_mode == 2&&config_flag==1)
     {
         HAL_UART_Transmit(&huart2,(uint8_t *)at_open_showback,strlen(at_open_showback),1000);
         HAL_Delay(100);
@@ -186,7 +189,6 @@ void AT_lora_mode_set()
     else
     {
         HAL_UART_Transmit(&huart1,(uint8_t *)error,strlen(error),1000);
-
     }
 
 }
@@ -206,37 +208,35 @@ void AT_lora_inquire()
 
 void enter_low_power_mode()
 {
+    HAL_UART_Transmit(&huart1,(uint8_t *)low_power,strlen(low_power),1000);
+    HAL_Delay(100);
     HAL_UART_DeInit(&huart2);
     HAL_UART_DeInit(&huart1);
     GPIO_InitTypeDef GPIO_InitStruct = {0};
 
-    GPIO_InitStruct.Pin = GPIO_PIN_3; //PA3 UART2 RX
+    GPIO_InitStruct.Pin = GPIO_PIN_1; //唤醒模式下，模块AUX脚即接入到MCU的PE1会提前发出高电平唤醒MCU
     GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
-    GPIO_InitStruct.Pull = GPIO_PULLUP;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
     /* EXTI interrupt init*/
-    HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+    HAL_NVIC_SetPriority(EXTI1_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(EXTI1_IRQn);
 
     HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON,PWR_STOPENTRY_WFI);
-//    HAL_NVIC_DisableIRQ(USART1_IRQn);   //关掉外部中断
-//    HAL_NVIC_DisableIRQ(USART2_IRQn);   //关掉外部中断
-//    SystemClock_Config();//重新配置时钟，低功耗唤醒之后默认HSI 8M
-
+    SystemClock_Config();
+    weak_up = 0;
 }
-
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    if(GPIO_Pin == GPIO_PIN_3)
+    if(GPIO_Pin == GPIO_PIN_1)
     {
         HAL_Init();
-        SystemClock_Config();
         huart2.gState = HAL_UART_STATE_RESET;
-        huart1.gState = HAL_UART_STATE_RESET;
         MX_USART2_UART_Init();
+        huart1.gState = HAL_UART_STATE_RESET;
         MX_USART1_UART_Init();
-        HAL_NVIC_DisableIRQ(EXTI3_IRQn);
+        HAL_NVIC_DisableIRQ(EXTI1_IRQn);//开了UART2 RX的普通IO中断要关掉，串口init不会给你关掉的
         __HAL_UART_ENABLE_IT(&huart2,UART_IT_RXNE);
         __HAL_UART_ENABLE_IT(&huart2,UART_IT_IDLE);
         __HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);
@@ -293,7 +293,10 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-
+      if(weak_up==1)
+      {
+          enter_low_power_mode();
+      }
 
       HAL_Delay(10);
   }
