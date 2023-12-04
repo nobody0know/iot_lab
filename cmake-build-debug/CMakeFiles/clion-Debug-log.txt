@@ -1,19 +1,19 @@
-"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S C:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab -B C:\Users\lc201\Downloads\LANDrop\iot_lab\iot_lab\cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=C:/arm_toolchain/bin/arm-none-eabi-gcc.exe -DCMAKE_CXX_COMPILER=C:/arm_toolchain/bin/arm-none-eabi-g++.exe -G "CodeBlocks - MinGW Makefiles" -S C:\Users\lxj\CLionProjects\iot_lab -B C:\Users\lxj\CLionProjects\iot_lab\cmake-build-debug
 -- The C compiler identification is GNU 10.3.1
 -- The CXX compiler identification is GNU 10.3.1
 -- The ASM compiler identification is GNU
--- Found assembler: C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gcc.exe
+-- Found assembler: C:/arm_toolchain/bin/arm-none-eabi-gcc.exe
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-gcc.exe - skipped
+-- Check for working C compiler: C:/arm_toolchain/bin/arm-none-eabi-gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/arm-none-eabi-g++.exe - skipped
+-- Check for working CXX compiler: C:/arm_toolchain/bin/arm-none-eabi-g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Minimal optimization, debug info included
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/cmake-build-debug
+-- Configuring done (2.9s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/lxj/CLionProjects/iot_lab/cmake-build-debug
