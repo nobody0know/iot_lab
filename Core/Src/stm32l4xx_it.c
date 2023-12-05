@@ -251,11 +251,11 @@ void USART2_IRQHandler(void)
   if(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_ORE) != RESET)
   {
       HAL_UART_Receive(&huart2,&res,1,1000);
-      if(rx2_count < 256)
-      {
-          rx2_buffer[rx2_count] = res;
-          rx2_count++;
-      }
+//      if(rx2_count < 256)
+//      {
+//          rx2_buffer[rx2_count] = res;
+//          rx2_count++;
+//      }
       __HAL_UART_CLEAR_FLAG(&huart2,UART_FLAG_ORE);
   }
 
@@ -296,6 +296,7 @@ void USART2_IdleCallback(uint8_t *pData,uint16_t len)
     while(__HAL_UART_GET_FLAG(&huart2,UART_FLAG_TC) != SET);
 
     HAL_UART_Transmit(&huart1,pData,len,1000);
+
     weak_up = 1;
 }
 extern uint8_t trans_mode;

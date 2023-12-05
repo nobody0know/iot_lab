@@ -78,6 +78,7 @@ char at_set_tmode_transparent[20] = {"AT+TMODE=0\r\n"};//透明传输
 char at_set_tmode_orientation[20] = {"AT+TMODE=1\r\n"};//定点传输
 
 char at_search_wlrate[20] = {"AT+WLRATE?\r\n"};//查询无线速率和信道
+//!!!!!!!!注意，这个信道是10进制，如果要进行定向传输时，报文中信道的部分要写成0C而不是12！！！！！！！！!!!!!
 char at_set_wlrate_a[30] = {"AT+WLRATE=12,4\r\n"};//信道12 速率9.6kbps
 char at_set_wlrate_b[30] = {"AT+WLRATE=12,4\r\n"};//信道12 速率9.6kbps
 
@@ -109,6 +110,8 @@ void AT_lora_init()
     }
     if(config_flag==1)
     {
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_cwmode_nomal,strlen(at_set_cwmode_nomal),1000);
+        HAL_Delay(100);
 //        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_cwmode_weakup,strlen(at_set_cwmode_weakup),1000);//另一个板子需要低功耗唤醒时，主板再解除注释
         AT_lora_mode_set();
     }
@@ -177,6 +180,7 @@ void AT_lora_mode_set()
 
             HAL_UART_Transmit(&huart2,(uint8_t *)at_set_address_b,strlen(at_set_address_b),1000);
             HAL_Delay(100);
+
         }
 
         HAL_UART_Transmit(&huart2,(uint8_t *)at_set_uart_baudrate_115200,strlen(at_set_uart_baudrate_115200),1000);
@@ -185,6 +189,7 @@ void AT_lora_mode_set()
         HAL_GPIO_WritePin(GPIOE, GPIO_PIN_0, GPIO_PIN_RESET);
         HAL_UART_Transmit(&huart2,(uint8_t *)at_restart,strlen(at_restart),1000);
         HAL_Delay(100);
+        weak_up = 0;
     }
     else
     {
@@ -293,7 +298,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-      if(weak_up==1)
+      if(weak_up==1&&config_flag==2)
       {
           enter_low_power_mode();
       }
