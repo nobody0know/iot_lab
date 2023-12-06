@@ -17,7 +17,6 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include <string.h>
 #include "main.h"
 #include "usart.h"
 #include "gpio.h"
@@ -26,6 +25,9 @@
 /* USER CODE BEGIN Includes */
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
+#include <string.h>
+#include <stdio.h>
+#include "bsp_AHT10.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -94,6 +96,8 @@ char choose_board[100] = {"\nPlease select which board you are on:\n 1.A board\n
 
 char error[30] = {"something was wrong!\r\n"};
 char low_power[30] = {"mcu enter low power mode"};
+uint16_t temperature;
+uint16_t humidity;
 void AT_lora_mode_set();
 void AT_lora_inquire();
 void enter_low_power_mode();
@@ -288,7 +292,9 @@ int main(void)
     __HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);
     __HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);
     AT_lora_init();
-
+    HAL_Delay(1000);
+    AHT10Init();
+    HAL_Delay(1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -298,6 +304,14 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    if(config_flag == 1)
+    {
+
+        AHT10ReadData(&temperature,&humidity);
+        uint8_t str[50];
+        sprintf(str,"t:%d,h:%d\r\n",temperature,humidity);
+//        HAL_UART_Transmit(&huart2,str, strlen(str),1000);
+    }
       if(weak_up==1&&config_flag==2)
       {
           enter_low_power_mode();
@@ -332,7 +346,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 1;
-  RCC_OscInitStruct.PLL.PLLN = 8;
+  RCC_OscInitStruct.PLL.PLLN = 10;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
   RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
@@ -350,7 +364,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
   {
     Error_Handler();
   }

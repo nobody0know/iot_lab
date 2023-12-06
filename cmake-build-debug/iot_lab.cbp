@@ -32,6 +32,7 @@
 					<Add directory="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy"/>
 					<Add directory="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/CMSIS/Device/ST/STM32L4xx/Include"/>
 					<Add directory="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/CMSIS/Include"/>
+					<Add directory="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/bsp"/>
 					<Add directory="c:\program files (x86)\gnu arm embedded toolchain\10 2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
 					<Add directory="c:\program files (x86)\gnu arm embedded toolchain\10 2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
 					<Add directory="c:\program files (x86)\gnu arm embedded toolchain\10 2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"/>
@@ -61,6 +62,7 @@
 					<Add directory="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc/Legacy"/>
 					<Add directory="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/CMSIS/Device/ST/STM32L4xx/Include"/>
 					<Add directory="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/CMSIS/Include"/>
+					<Add directory="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/bsp"/>
 					<Add directory="c:\program files (x86)\gnu arm embedded toolchain\10 2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
 					<Add directory="c:\program files (x86)\gnu arm embedded toolchain\10 2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
 					<Add directory="c:\program files (x86)\gnu arm embedded toolchain\10 2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"/>
@@ -264,6 +266,12 @@
 		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h">
 			<Option target="iot_lab.elf"/>
 		</Unit>
+		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h">
+			<Option target="iot_lab.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h">
+			<Option target="iot_lab.elf"/>
+		</Unit>
 		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h">
 			<Option target="iot_lab.elf"/>
 		</Unit>
@@ -357,6 +365,12 @@
 		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c">
 			<Option target="iot_lab.elf"/>
 		</Unit>
+		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c">
+			<Option target="iot_lab.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c">
+			<Option target="iot_lab.elf"/>
+		</Unit>
 		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c">
 			<Option target="iot_lab.elf"/>
 		</Unit>
@@ -382,6 +396,12 @@
 			<Option target="iot_lab.elf"/>
 		</Unit>
 		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/STM32L475VETX_FLASH.ld">
+			<Option target="iot_lab.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/bsp/bsp_AHT10.c">
+			<Option target="iot_lab.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/bsp/bsp_AHT10.h">
 			<Option target="iot_lab.elf"/>
 		</Unit>
 		<Unit filename="C:/Users/lc201/Downloads/LANDrop/iot_lab/iot_lab/CMakeLists.txt">

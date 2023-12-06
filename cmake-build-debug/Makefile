@@ -544,6 +544,54 @@ Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\iot_lab.elf.dir\build.make CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c.s
 .PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c.s
 
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.obj: Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.obj
+
+# target to build an object file
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\iot_lab.elf.dir\build.make CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj
+
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.i: Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.i
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.i
+
+# target to preprocess a source file
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\iot_lab.elf.dir\build.make CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.i
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.i
+
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.s: Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.s
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.s
+
+# target to generate assembly for a file
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\iot_lab.elf.dir\build.make CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.s
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.s
+
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.obj: Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.obj
+
+# target to build an object file
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\iot_lab.elf.dir\build.make CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj
+
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.i: Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.i
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.i
+
+# target to preprocess a source file
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\iot_lab.elf.dir\build.make CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.i
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.i
+
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.s: Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.s
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.s
+
+# target to generate assembly for a file
+Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\iot_lab.elf.dir\build.make CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.s
+.PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.s
+
 Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.obj: Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj
 .PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.obj
 
@@ -736,6 +784,30 @@ Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\iot_lab.elf.dir\build.make CMakeFiles/iot_lab.elf.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c.s
 .PHONY : Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c.s
 
+bsp/bsp_AHT10.obj: bsp/bsp_AHT10.c.obj
+.PHONY : bsp/bsp_AHT10.obj
+
+# target to build an object file
+bsp/bsp_AHT10.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\iot_lab.elf.dir\build.make CMakeFiles/iot_lab.elf.dir/bsp/bsp_AHT10.c.obj
+.PHONY : bsp/bsp_AHT10.c.obj
+
+bsp/bsp_AHT10.i: bsp/bsp_AHT10.c.i
+.PHONY : bsp/bsp_AHT10.i
+
+# target to preprocess a source file
+bsp/bsp_AHT10.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\iot_lab.elf.dir\build.make CMakeFiles/iot_lab.elf.dir/bsp/bsp_AHT10.c.i
+.PHONY : bsp/bsp_AHT10.c.i
+
+bsp/bsp_AHT10.s: bsp/bsp_AHT10.c.s
+.PHONY : bsp/bsp_AHT10.s
+
+# target to generate assembly for a file
+bsp/bsp_AHT10.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\iot_lab.elf.dir\build.make CMakeFiles/iot_lab.elf.dir/bsp/bsp_AHT10.c.s
+.PHONY : bsp/bsp_AHT10.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -797,6 +869,12 @@ help:
 	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.obj
 	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.i
 	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.s
+	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.obj
+	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.i
+	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.s
+	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.obj
+	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.i
+	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.s
 	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.obj
 	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.i
 	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.s
@@ -821,6 +899,9 @@ help:
 	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.obj
 	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.i
 	@echo ... Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.s
+	@echo ... bsp/bsp_AHT10.obj
+	@echo ... bsp/bsp_AHT10.i
+	@echo ... bsp/bsp_AHT10.s
 .PHONY : help
 
 
