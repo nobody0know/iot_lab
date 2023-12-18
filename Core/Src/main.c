@@ -114,9 +114,9 @@ void AT_lora_init()
     }
     if(config_flag==1)
     {
-        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_cwmode_nomal,strlen(at_set_cwmode_nomal),1000);
+//        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_cwmode_nomal,strlen(at_set_cwmode_nomal),1000);
         HAL_Delay(100);
-//        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_cwmode_weakup,strlen(at_set_cwmode_weakup),1000);//另一个板子需要低功耗唤醒时，主板再解除注释
+        HAL_UART_Transmit(&huart2,(uint8_t *)at_set_cwmode_weakup,strlen(at_set_cwmode_weakup),1000);//另一个板子需要低功耗唤醒时，主板再解除注释
         AT_lora_mode_set();
     }
     else if(config_flag == 2)
@@ -245,7 +245,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         MX_USART2_UART_Init();
         huart1.gState = HAL_UART_STATE_RESET;
         MX_USART1_UART_Init();
-        HAL_NVIC_DisableIRQ(EXTI1_IRQn);//开了UART2 RX的普通IO中断要关掉，串口init不会给你关掉的
+        HAL_NVIC_DisableIRQ(EXTI1_IRQn);
         __HAL_UART_ENABLE_IT(&huart2,UART_IT_RXNE);
         __HAL_UART_ENABLE_IT(&huart2,UART_IT_IDLE);
         __HAL_UART_ENABLE_IT(&huart1,UART_IT_RXNE);

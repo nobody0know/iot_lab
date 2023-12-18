@@ -153,7 +153,7 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/iot_lab.elf.dir/Core/Src/main.c.obj
  .data          0x00000000        0x0 CMakeFiles/iot_lab.elf.dir/Core/Src/main.c.obj
  .bss           0x00000000        0x0 CMakeFiles/iot_lab.elf.dir/Core/Src/main.c.obj
- .data.at_set_cwmode_weakup
+ .data.at_set_cwmode_nomal
                 0x00000000       0x14 CMakeFiles/iot_lab.elf.dir/Core/Src/main.c.obj
  .text          0x00000000        0x0 CMakeFiles/iot_lab.elf.dir/Core/Src/stm32l4xx_hal_msp.c.obj
  .data          0x00000000        0x0 CMakeFiles/iot_lab.elf.dir/Core/Src/stm32l4xx_hal_msp.c.obj
@@ -2007,9 +2007,9 @@ LOAD c:/progra~2/gnuarm~1/102021~1.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/
  .data.at_set_cwmode_lowpower
                 0x200000b4       0x14 CMakeFiles/iot_lab.elf.dir/Core/Src/main.c.obj
                 0x200000b4                at_set_cwmode_lowpower
- .data.at_set_cwmode_nomal
+ .data.at_set_cwmode_weakup
                 0x200000c8       0x14 CMakeFiles/iot_lab.elf.dir/Core/Src/main.c.obj
-                0x200000c8                at_set_cwmode_nomal
+                0x200000c8                at_set_cwmode_weakup
  .data.at_set_tmode_orientation
                 0x200000dc       0x14 CMakeFiles/iot_lab.elf.dir/Core/Src/main.c.obj
                 0x200000dc                at_set_tmode_orientation
